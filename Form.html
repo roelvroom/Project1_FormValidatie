@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form onsubmit="return validateForm()" class="container">
+      <div class="row">
+        <div class="col mb-3">
+          <label for="voornaam" class="form-label">Voornaam</label>
+          <input type="text" class="form-control" id="voornaam" placeholder="Uw voornaam"/>
+        </div>
+        <div class="col mb-3">
+          <label for="naam" class="form-label">Naam</label>
+          <input type="text" class="form-control" id="naam" placeholder="Uw naam"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="gebruikersnaam" class="form-label">Gebruikersnaam</label>
+          <input type="text" class="form-control" id="gebruikersnaam" placeholder="r123456"/>
+        </div>
+        <div class="col mb-3">
+          <label for="email" class="form-label">E-mailadress</label>
+          <input type="email" class="form-control" id="email" placeholder="Fake@email.com"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="wachtwoord" class="form-label">Wachtwoord</label>
+          <input type="password" class="form-control" id="wachtwoord" />
+          <p>Je wachtwoord moet minstens 8 tekens lang zijn</p>
+        </div>
+        <div class="col mb-3">
+          <label for="herhalingwachtwoord" class="form-label">Herhalen wachtwoord</label>
+          <input type="password" class="form-control" id="herhalingwachtwoord" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+            <label for="adress" class="form-label">Adress</label>
+            <input type="text" class="form-control" id="adress" placeholder="Uw adress en huisnummer"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- <label for="Land" class="form-check-label">Land</label><br>
+          <select class="form-control" name="InputLand">
+            <option value="">Kies een land</option>
+            <option value= "België">België</option>
+            <option value= "Frankrijk">Frankrijk</option>
+            <option value= "Nederland">Nederland</option>
+          </select> -->
+            <div>Land</div>
+            <select class="form-select" aria-label="Default select example" id="landkiezen">
+              <option selected value="">Kies een land</option>
+              <option value="België">België</option>
+              <option value="Nederland">Nederland</option>
+              <option value="Frankrijk">Frankrijk</option>
+            </select>
+        </div>
+        <div class="col">
+            <div>Provincie</div>
+            <select class="form-select" aria-label="Default select example" id="provincieKiezen">
+              <option value="">Kies een Provincie</option>
+              <optgroup label="Provincies België">
+                  <option value= "België1">Antwerpen</option>
+                  <option value= "België2">Henegouwen</option>
+                  <option value= "België3">Limburg</option>
+                  <option value= "België4">Luik</option>
+                  <option value= "België5">Luxemburg</option>
+                  <option value= "België6">Oost-Vlaanderen</option>
+                  <option value= "België7">Vlaams-Brabant</option>
+                  <option value= "België8">Waals-Brabant</option>
+                  <option value= "België9">West-Vlaanderen</option>
+              </optgroup>
+              <optgroup label="Provincies Frankrijk">
+                <option value= "Frankrijk1">Angoumois</option>
+                <option value= "Frankrijk2">Anjou</option>
+                <option value= "Frankrijk3">Artesië</option>
+                <option value= "Frankrijk4">Auvergne</option>
+                <option value= "Frankrijk5">Avignon et Comtat Venaissin</option>
+                <option value= "Frankrijk6">Béarn</option>
+                <option value= "Frankrijk7">Berry</option>
+                <option value= "Frankrijk8">Bourbonnais</option>
+                <option value= "Frankrijk9">Bourgondië</option>
+              </optgroup>
+                <optgroup label="Provincies Nederland">
+                <option value= "Nederland1">Drethe</option>
+                <option value= "Nederland2">Flevoland</option>
+                <option value= "Nederland3">Friesland</option>
+                <option value= "Nederland4">Gelderland</option>
+                <option value= "Nederland5">Groningen</option>
+                <option value= "Nederland6">Limburg</option>
+                <option value= "Nederland7">Noord-Brabant</option>
+                <option value= "Nederland8">Noord-Holland</option>
+                <option value= "Nederland9">Overijssel</option>
+              </optgroup>
+            </select>
+        </div>
+        <div class="col">
+            <div>Postcode</div>
+            <input type="number" id="postcode" class="form-control" placeholder="" name="InputPostcode" min="1000" max="9999">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+            <h2>Hou me op de hoogte!</h2>
+            <input type="checkbox" class="form-check-input" id="nieuwsbrief"/>
+            <label class="form-check-label" for="nieuwsbrief">
+              Inschrijven voor onze nieuwsbrief.
+            </label>
+            <br />
+            <input type="checkbox" class="form-check-input" id="algemeneVoorwaarden"/>
+            <label class="form-check-label" for="algemeneVoorwaarden">
+                Ik ga akkoord met de algemene voorwaarden.
+            </label>
+        </div>
+        <div class="col">
+            <h2>Betaling</h2>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="betalingKeuze" id="bankingApp">
+                <label class="form-check-label" for="#">
+                  Banking app
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="betalingKeuze" id="overschrijving">
+                <label class="form-check-label" for="#">
+                  Overschrijving
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="betalingKeuze" id="visaCard">
+                <label class="form-check-label" for="#">
+                  Visa card
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="betalingKeuze" id="payPal">
+                <label class="form-check-label" for="#">
+                  Paypal
+                </label>
+            </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+      <button type="submit" class="btn btn-primary">Wave yor magic wand</button>
+      </div>
+    </form>
+    <script>
+      function validateForm() {
+        var voornaam = document.getElementById("voornaam").value;
+        var naam = document.getElementById("naam").value;
+        var gebruikersnaam = document.getElementById("gebruikersnaam").value;
+        var email = document.getElementById("email").value;
+        var wachtwoord = document.getElementById("wachtwoord").value;
+        var herhalingwachtwoord = document.getElementById("herhalingwachtwoord").value;
+        var adress = document.getElementById("adress").value;
+        var landkiezen = document.getElementById("landkiezen").value;
+        var provincieKiezen = document.getElementById("provincieKiezen").value;
+        var postcode = document.getElementById("postcode").value;
+        var checkbox = document.getElementById("algemeneVoorwaarden");
+        var keuzeBetalingsMethode = document.getElementsByName("betalingKeuze");
+        var errors = [];
+        var wwErrors = [];
+
+        checkEmptyField(voornaam,"Het veld voornaam is vereist.",errors);
+        checkEmptyField(naam, "Het veld naam is vereist.", errors);
+        checkEmptyField(gebruikersnaam,"Het veld Gebruikersnaam is vereist.",errors);
+        validateEmail(email,"Geen geldig Email-adress", errors);
+        checkEmptyField(wachtwoord,"Het veld wachtwoord is vereist.",errors);
+        checkEmptyField(herhalingwachtwoord,"Het veld herhaling wachtwoord is vereist.",errors);
+        checkWW(wachtwoord, herhalingwachtwoord, wwErrors);
+        checkEmptyField(adress,"Het veld adress is vereist.",wwErrors);
+
+        checkKeuzeVelden(landkiezen, "Het veld land is vereist.",errors);
+        checkKeuzeVelden(provincieKiezen, "Het veld Provincie is vereist.",errors);
+        checkKeuzeVelden(postcode, "Het veld postcode is vereist.",wwErrors);
+
+        checkBox(checkbox,"De algemene voorwaarden moeten aangeduid worden!",errors);
+
+        keuzeBetalingsMethode.forEach(radio => {
+        radio.addEventListener('change',()=>{
+          if(radio.checkBox){
+            alert(`Je hebt gekozen voor ${radio.nextElementSibling.textContent}`);
+          }
+          })
+        })
+        
+      function checkKeuzeVelden(veld, bericht, errors){
+        if(veld == ""){
+            errors.push(bericht);
+        }
+      }
+      function checkEmptyField(veld, bericht, errors) {
+        if (veld.trim() === "") {
+          errors.push(bericht);
+        }
+      }
+      function validateEmail(veld, bericht, errors){
+        var emailcheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(veld === ""){
+          errors.push("E-mailadres: verplicht in te vullen veld!");
+        }
+        if(veld.match(emailcheck)){
+          return true;
+        }else{
+          errors.push(bericht);
+        }
+        return errors;
+      }
+      function checkWW(wachtwoord, herhalingwachtwoord, wwErrors){
+        if(wachtwoord.length < 8){
+            wwErrors.push("Wachtwoord moet minstens 8 tekens lang zijn!");
+        }
+        if(herhalingwachtwoord !== wachtwoord){
+            wwErrors.push("Herlang wachtwoord moet gelijk zijn aan wachtwoord!");
+        }
+      }
+      function checkBox(checkbox, bericht, errors){
+        if(!checkbox.checked){
+            errors.push(bericht);
+        }
+      }
+
+      
+
+        if (errors.length > 0) {
+          alert(errors.join("\n"));
+          return false;
+        }
+        if(wwErrors.length > 0){
+          alert(wwErrors.join("\n"))
+          return false;
+        }
+        if(errors.length == 0 || wwErrors.length == 0){
+          alert("Super! je informatie is goed verzonden.")
+        }
+        
+        return true;
+
+        
+      }
+
+      
+      
+    </script>
+  </body>
+</html>
